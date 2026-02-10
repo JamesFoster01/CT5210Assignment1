@@ -25,7 +25,7 @@ public class BorrowBookUseCase {
         Book book = bookOpt.get();
         if (!book.isAvailable()) return "Book is already borrowed.";
 
-        // Mark book unavailable
+        //mark bookunavailable
         book.setAvailable(false);
 
         BorrowRecord record = new BorrowRecord(
