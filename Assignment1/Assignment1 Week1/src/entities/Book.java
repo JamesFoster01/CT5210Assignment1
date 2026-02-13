@@ -1,20 +1,16 @@
 package entities;
 
 public class Book {
-    private final String id;
     private final String title;
     private final String author;
-    private Boolean available; // should not be final, as the availability of the book will change.
+    private final String isbn;
+    private int copies;
 
-    public Book(String id, String title, String author, Boolean available) {
-        this.id = id;
+    public Book(String title, String author, String isbn, int copies) {
         this.title = title;
         this.author = author;
-        this.available = true;
-    }
-
-    public String getId() {
-        return id;
+        this.isbn = isbn;
+        this.copies = copies;
     }
 
     public String getTitle() {
@@ -25,16 +21,17 @@ public class Book {
         return author;
     }
 
-    public boolean isAvailable() {
-        return available;
+    public String getIsbn() {
+        return isbn;
     }
 
-    public void setAvailable(boolean available) {
-        this.available = available;
+    public int getAvailableCopies() {
+        return copies;
     }
 
     @Override
     public String toString() {
-        return "Book{ id='" + id + "', title='" + title + "', author='" + author + "', available=" + available + "}";
+        return "Book{ title='" + title + "', author='" + author + "', isbn='" + isbn + "', copies='"
+                + copies + "'}";
     }
 }

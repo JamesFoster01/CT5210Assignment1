@@ -3,16 +3,16 @@ package frameworks;
 import entities.Book;
 import entities.Member;
 import entities.BorrowRecord;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Optional;
 
 import usecases.LibraryRepository;
 
 public class InMemoryLibraryRepository implements LibraryRepository {
-    private List<Book> books = new ArrayList<>();
-    private List<Member> members = new ArrayList<>();
-    private List<BorrowRecord> borrowRecords = new ArrayList<>();
+    private ArrayList<Book> books = new ArrayList<>();
+    private ArrayList<Member> members = new ArrayList<>();
+    private ArrayList<BorrowRecord> borrowRecords = new ArrayList<>();
 
     @Override
     public void addBook(Book book) {
@@ -21,12 +21,12 @@ public class InMemoryLibraryRepository implements LibraryRepository {
 
     @Override
     public List<Book> getAllBooks() {
-        return new ArrayList<>(books);
+        return new List<>(books);
     }
 
     @Override
-    public Optional<Book> findBookById(String bookId) {
-        return books.stream().filter(book -> book.getId().equals(bookId)).findFirst();
+    public Optional<Book> findBookById(String isbn) {
+        return books.stream().filter(book -> book.getIsbn().equals(isbn)).findFirst();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class InMemoryLibraryRepository implements LibraryRepository {
     }
 
     @Override
-    public List<BorrowRecord> getAllBorrowRecords() {
+    public ArrayList<BorrowRecord> getAllBorrowRecords() {
         return new ArrayList<>(borrowRecords);
     }
 }
