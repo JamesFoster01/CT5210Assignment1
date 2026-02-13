@@ -1,7 +1,7 @@
 package usecases;
 
 import entities.Book;
-import java.util.List;
+import java.util.ArrayList;
 
 public class ListBookUseCase { // Typo it said ListBooksUseCase --> changed to ListBookUseCase
     private final LibraryRepository repo;
@@ -10,7 +10,7 @@ public class ListBookUseCase { // Typo it said ListBooksUseCase --> changed to L
         this.repo = repo;
     }
 
-    public List<Book> execute() {
+    public ArrayList<Book> execute() {
         return repo.getAllBooks();
     }
 }
