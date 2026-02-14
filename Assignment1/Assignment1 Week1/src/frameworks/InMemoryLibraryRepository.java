@@ -27,7 +27,7 @@ public class InMemoryLibraryRepository implements LibraryRepository {
 
     @Override
     public List<Book> getAllBooks() {
-        return new List<>(books);
+        return new ArrayList<>(books);
     }
 
     @Override
@@ -57,12 +57,12 @@ public class InMemoryLibraryRepository implements LibraryRepository {
 
     @Override
     public List<BorrowRecord> getAllBorrowRecords() {
-        return new List<>(borrowRecords);
+        return new ArrayList<>(borrowRecords);
     }
 
     @Override
     public List<Book> getAvailableBooks() {
-        return new List<>(Book);
+        return new ArrayList<>(books);
     }
 
     @Override
@@ -78,6 +78,6 @@ public class InMemoryLibraryRepository implements LibraryRepository {
 
     @Override
     public List<Book> searchBooksByAuthor(String author) {
-        return new List<>(Book);
+        return new ArrayList<>(books);
     }
 }

@@ -139,7 +139,7 @@ public class LibraryController {
 
     public ArrayList<Book> getAvailableBooks() {
         try {
-            List<Book> availableBooks = repository.findAvailableBooks();
+            List<Book> availableBooks = repository.getAvailableBooks();
             return new ArrayList<>(availableBooks);
         } catch (Exception e) {
             System.err.println("Error finding available books: " + e.getMessage());

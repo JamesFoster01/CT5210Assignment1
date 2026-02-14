@@ -17,7 +17,9 @@ public interface LibraryRepository {
 
     List<Book> searchBooksByTitle(String title);
 
-    List<Book> findAvailableBooks();
+    List<Book> searchBooksByAuthor(String author);
+
+    List<Book> getAvailableBooks();
 
     // members
     void addMember(Member member);
