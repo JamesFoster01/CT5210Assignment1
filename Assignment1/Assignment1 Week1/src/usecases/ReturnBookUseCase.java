@@ -25,6 +25,7 @@ public class ReturnBookUseCase {
         record.markReturned(LocalDate.now());
 
         Book book = bookOpt.get();
+        book.incrementAvailableCopies();
 
         return true;
     }
